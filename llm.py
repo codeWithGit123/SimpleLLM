@@ -1,19 +1,11 @@
 import os
-from dotenv import load_dotenv
 import streamlit as st
 import google.generativeai as genai
 
-# Load environment variables from .env file
-load_dotenv()
 
-# Set up the Google Generative AI Client
-api_key = os.getenv('API_KEY')
-if not api_key:
-    st.error("API key is missing. Please set the API key in the .env file.")
-    st.stop()
 
 # Configure the Generative AI client
-genai.configure(api_key=api_key)
+genai.configure(api_key='AIzaSyBf1RJ5ZTxwzZIlvXj6sggPb0fSi3DRUA0')
 
 # Initialize the Generative Model
 model = genai.GenerativeModel('gemini-1.5-flash')
