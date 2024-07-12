@@ -1,11 +1,12 @@
 import os
 import streamlit as st
 import google.generativeai as genai
+from dotenv import load_dotenv
 
-
+load_dotenv()
 
 # Configure the Generative AI client
-genai.configure(api_key='AIzaSyBf1RJ5ZTxwzZIlvXj6sggPb0fSi3DRUA0')
+genai.configure(api_key=os.getenv('API_KEY')
 
 # Initialize the Generative Model
 model = genai.GenerativeModel('gemini-1.5-flash')
